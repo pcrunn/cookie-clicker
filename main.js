@@ -66,7 +66,7 @@ const app = new Vue({
                 }
 
                 this.changeCookies(-building.price);
-                building.price += building.price / (building.price / 2);
+                building.price += building.price / 2;
 
                 this.per_second += building.per_second;
                 this.per_click += building.per_click;
