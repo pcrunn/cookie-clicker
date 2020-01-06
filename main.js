@@ -16,7 +16,7 @@ const buildings = [
     {
         name: 'farm',
         price: 1000,
-        description: 'a smelly farm full of pigs and stauds',
+        description: 'a smelly farm full of pigs',
         per_second: 15,
         per_click: 0.5
     },
