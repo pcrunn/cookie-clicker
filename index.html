@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Cookie Clicker</title>
+    </head>
+
+    <body>
+        <div id="root">
+            <h3>~ {{ notification }}</h3>
+
+            <h1>{{ fix(cookies) }} Cookies</h1>
+            <p>per second: {{ fix(per_second) }}</p>
+
+            <br><br>
+            <img draggable="false" src="cookie.png" v-on:click="clickCookie" v-bind:height="cookie_height">
+
+            <ul>
+                <li v-for="building in buildings">
+                    <div>
+                        <p>{{ fix(building.owned) }} {{ building.name }}s</p>
+                        <p>{{ building.description }}</p>
+                        <p>Costs {{ fix(Math.round(building.price)) }} cookies</p>
+
+                        <button
+                        v-if="availableBuildings.includes(building)"
+                        v-on:click="() => buy(building)">
+                            Buy
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h1>Written by <a href="https://github.com/pcrunn">Alexander P</a></h1>
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://raw.githack.com/ScottHamper/Cookies/master/src/cookies.js"></script>
+    <script src="./main.js" charset="utf-8"></script>
+</html>
